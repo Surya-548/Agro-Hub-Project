@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroHub.AI</title>
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Icons From fontawesome -->
+    <script src="https://kit.fontawesome.com/0212e5d715.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
+
+
+    <!-- Bootstrap CDN Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/0212e5d715.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom CSS  -->
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+
+        /* Intro Section Styling  */
+        #intro {
+            background-color: #D5E5F2;
+            padding: 1% 9% 1% 7%;
+            padding:2% 7% 10% 7%;
+
+        }
+
+        #intro img {
+            width: 100%;
+        }
+
+        #intro h1 {
+            font-size: 3.5rem;
+        }
+
+        .navbar {
+            color: #024059;
+            font-size: 1.4rem;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #024059 !important;
+        }
+
+
+        .intro-quote {
+            padding-top: 10%;
+            line-height: 6;
+            color: #024059;
+        }
+
+        .logout{
+            color: #03738C;
+        }
+
+
+        #intro .btn-outline-dark:hover {
+            background-color: #024059;
+            color: white;
+        }
+
+        #intro .btn-outline-dark {
+            border: 1px solid #024059;
+            color: #024059;
+
+        }
+
+        /********************************************/
+
+        /* Technologies Section Styling */
+
+        #tech {
+            margin-top: 5%;
+        }
+
+        #tech h1 {
+            text-align: center;
+            color: #024059;
+        }
+
+        .tech-icon {
+            font-size: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2% 0;
+        }
+
+        #tech .container-fluid {
+            margin: 5% 0;
+        }
+
+        /****************************************************/
+
+        /* About Us Section Styling */
+        #team h1 {
+            text-align: center;
+            color: #024059;
+        }
+
+        #team .container-fluid {
+            margin: 5% 0;
+        }
+
+        .team-mem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2% 0;
+            margin: 0 4%;
+        }
+
+        .pic img {
+            border-radius: 100%;
+            height: 200px;
+            width: 200px;
+        }
+
+        .pic {
+            margin-right: 5%;
+        }
+    </style>
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <section id="intro">
+        <div class="container-fluid">
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="{{url_for('index')}}" class="navbar-brand">AgroHub.AI</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('models')}}">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('forum')}}">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('contribute')}}">Contribute</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            {{username}}
+                        </li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        |
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <li class="nav-item">
+                            <a class="logout" href="{{url_for('logout')}}">Logout</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="../static/images/home_image-removebg-preview.png" alt="">
+                </div>
+
+                <div class="intro-quote col-lg-6">
+                    <h1>A Platform for<br>Precision Agriculture</h1>
+                    <button type="button" class="btn btn-outline-dark btn-lg">Learn More</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">© 2021 AgroHub.AI</p>
+
+            <a href="#"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Forum</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contribute</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>

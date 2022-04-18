@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block content %}
+
+
+<div class="container">
+    <div class="container">
+        <b>Asked By:</b> {{asked_by}}
+        <h2 style="color:#024059;">{{question}}</h2>
+    </div>
+    <div class="container">
+        <h5>Write your answer here</h5>
+        <form action="{{url_for('view_query',qid=qid)}}" method="post">
+            <div class="form-floating">
+                <textarea name="answer" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+
+              </div>
+              <br>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+    </div>
+    <br>
+
+    
+        <div class="container">
+            <h4>Other Answers</h4>
+            {%for i in answer_list%}
+                <div class="answer-card card">
+                    <b>Answered By: {{i[0]}}</b> 
+                    <p>{{i[1]}}</p>
+                </div>
+            {%endfor%}
+        </div>
+</div>
+
+{%endblock content %}

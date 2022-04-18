@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block content %}
+<div class="text-center">
+    <h2>Ask Query</h2>
+</div>
+<div class="container col-8 text-center">
+    <form action="{{url_for('ask_query')}}" method="post">
+        <div class="form-floating">
+            <textarea name="msg" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
+{%endblock content%}

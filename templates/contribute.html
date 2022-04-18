@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{%block content %}
+<div class="container">
+    <h2 class="text-center">Contribute</h2>
+    {%if contribution_successful %}
+    <div class="alert alert-success" role="alert">
+        {{contribution_successful}}
+    </div>
+    {%endif%}
+    <div class="container col-6">
+        <form action="{{url_for('contribute')}}" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="mail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="mail" name="mail" required>
+            </div>
+            <div class="mb-3">
+                <label for="codelink" class="form-label">Problem Statement</label>
+                <!-- <text type="file" class="form-control" id="doc" name="document"  enctype="multipart/form-data" required> -->
+                <textarea class="form-control" name="problem_statement" id="" cols="30" rows="10"></textarea>
+
+            </div>
+            <div class="mb-3">
+                <label for="codelink" class="form-label">Code and Documentation Link</label>
+                <input type="text" class="form-control" id="code_link" name="code_link" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{%endblock content%}

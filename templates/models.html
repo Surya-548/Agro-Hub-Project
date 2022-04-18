@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block content %}
+<div class="container text-center">
+    <h3>Ready to use Machine Learning Models for Precision Agriculture</h3>
+</div>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="../static/images/cr_image.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Crop Recommendation</h5>
+                    <br>
+                    <a href="{{url_for('cr_page')}}" class="btn btn-primary">Use This Model</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="../static/images/ct_image.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cotton Leaf Disease Detection</h5>
+                    <a href="{{url_for('ct_page')}}" class="btn btn-primary">Use This Model</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+
+</div>
+{%endblock content %}

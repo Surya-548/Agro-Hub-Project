@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block content %}
+<div id="result">
+    <div class="container text-center">
+        <h2>Crop Recommendation</h2>
+    </div>
+    <div class="container-fluid">
+       <div class="title">
+           <h1>Recommended Crops:</h1>
+       </div>
+       <hr><br>
+       <div>
+            <h2> {{result[0]}}</h2>
+       </div>
+       <div class="container">
+           <img src="../static/crop_images/{{result[0]}}.jpg" alt="">
+       </div>
+       <br><br>
+       <div>
+        <h2> {{result[1]}}</h2>
+   </div>
+       <div class="container">
+        <img src="../static/crop_images/{{result[1]}}.jpg" alt="">
+    </div>
+    <br><br>
+    <div>
+        <h2> {{result[2]}}</h2>
+   </div>
+   <br><br>
+    <div class="container">
+        <img src="../static/crop_images/{{result[2]}}.jpg" alt="">
+    </div>
+    </div>
+
+
+</div>
+{%endblock content %}

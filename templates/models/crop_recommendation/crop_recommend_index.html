@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+{%block content %}
+<div class="container text-center">
+    <h2>Crop Recommendation</h2>
+</div>
+<div class="container-fluid">
+    <form action="{{url_for('cr_predict')}}" class="col-lg-12" method="POST">
+        <div class="row d-flex  justify-content-center">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="n-ratio">
+                        <h5>Enter ratio of Nitrogen content in soil</h5>
+                    </label>
+                    <input name="N" type="text" class="form-control" id="n-ratio"
+                        placeholder="Ratio of Nitrogen Content">
+                </div>
+                <div class="form-group">
+                    <label for="p-ratio">
+                        <h5>Enter the ratio of Phosphorous Content in soil</h5>
+                    </label>
+                    <input name="P" type="text" class="form-control" id="p-ratio"
+                        placeholder="Ratio of Phosphorous Content">
+                </div>
+                <div class="form-group">
+                    <label for="k-ratio">
+                        <h5>Enter the ratio of Potassium Content in soil</h5>
+                    </label>
+                    <input name="K" type="text" class="form-control" id="k-ratio"
+                        placeholder="Ratio of Potassium Content">
+                </div>
+                <div class="form-group">
+                    <label for="temp">
+                        <h5>Enter temperature in celsius</h5>
+                    </label>
+                    <input name="T" type="text" class="form-control" id="temp" placeholder="Temperature">
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="humid">
+                        <h5>Enter relative Humidity in %</h5>
+                    </label>
+                    <input name="H" type="text" class="form-control" id="humid" placeholder="Humidity">
+                </div>
+                <div class="form-group">
+                    <label for="ph">
+                        <h5>Enter ph value of th soil</h5>
+                    </label>
+                    <input name="PH" type="text" class="form-control" id="ph" placeholder="ph">
+                </div>
+                <div class="form-group">
+                    <label for="rainfall">
+                        <h5>Enter rainfall measure in mm</h5>
+                    </label>
+                    <input name="R" type="text" class="form-control" id="rainfall" placeholder="Rainfall in mm">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="predict d-flex align-items-center justify-content-center">
+
+            <input type="submit" class="btn btn-primary" value="Predict">
+        </div>
+
+    </form>
+</div>
+{%endblock content%}
